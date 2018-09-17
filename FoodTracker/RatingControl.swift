@@ -33,7 +33,13 @@ class RatingControl: UIStackView {
     
     //MARK: Properties
     private var ratingButtons = [UIButton]()
-    var rating = 0
+    
+    var rating = 0 {
+        didSet {
+            updateButtonSelectionStates()
+        }
+    }
+    //var rating = 0
     
     //MARK: Initialization
     override init(frame: CGRect)
@@ -50,6 +56,7 @@ class RatingControl: UIStackView {
     
     private func setupButtons()
     {
+        //Clear any existing buttons
         for button in ratingButtons
         {
             removeArrangedSubview(button)
@@ -61,9 +68,7 @@ class RatingControl: UIStackView {
         //Load Buttons Images
         let bundle = Bundle(for: type(of: self))
         let filledStar =  UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
-        
         let emptyStar =  UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
-        
         let highlightedStar =  UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
 
         
@@ -71,8 +76,7 @@ class RatingControl: UIStackView {
         for _ in 0..<starCount {
             //Create button
             let button = UIButton()
-            //button.backgroundColor = UIColor.red
-            
+        
             //Set Button Images
             button.setImage(emptyStar, for: .normal)
             button.setImage(filledStar, for: .selected)
@@ -93,6 +97,7 @@ class RatingControl: UIStackView {
             ratingButtons.append(button)
         }
         
+        updateButtonSelectionStates()
         
     }
     
@@ -100,8 +105,29 @@ class RatingControl: UIStackView {
     
     func ratingButtonTapped(button: UIButton)
     {
+        guard let index = ratingButtons.index(of: button) else {
+            fatalError("The button, \(button)")
+        }
+        
+        // Calculate the rating of the selected button
+        let selectedRating = index + 1
+        
+        if selectedRating == rating {
+            // If the selected star represents the current rating, reset the rating to 0.
+            rating = 0
+        } else {
+            // Otherwise set the rating to the selected star
+            rating = selectedRating
+        }
         //cmd + ctrl + space
-        print("Button pressed 👍🏻")
+        //print("Button pressed 👍🏻")
+    }
+    
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            // If the index of a button is less than the rating, that button should be selected.
+            button.isSelected = index < rating
+        }
     }
 
 }
