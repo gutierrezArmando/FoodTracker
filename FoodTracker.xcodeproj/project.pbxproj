@@ -13,6 +13,7 @@
 		2A018B3D213601BE004182E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A018B3C213601BE004182E1 /* Assets.xcassets */; };
 		2A018B40213601BE004182E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A018B3E213601BE004182E1 /* LaunchScreen.storyboard */; };
 		2A018B4B213601BE004182E1 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A018B4A213601BE004182E1 /* FoodTrackerTests.swift */; };
+		2A8F6EAA21500141004ED415 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8F6EA921500141004ED415 /* Meal.swift */; };
 		480AD475214715DE00CC2C90 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480AD474214715DE00CC2C90 /* RatingControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		2A018B46213601BE004182E1 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A018B4A213601BE004182E1 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		2A018B4C213601BE004182E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8F6EA921500141004ED415 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		480AD474214715DE00CC2C90 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				2A018B3E213601BE004182E1 /* LaunchScreen.storyboard */,
 				2A018B41213601BE004182E1 /* Info.plist */,
 				480AD474214715DE00CC2C90 /* RatingControl.swift */,
+				2A8F6EA921500141004ED415 /* Meal.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8F6EAA21500141004ED415 /* Meal.swift in Sources */,
 				2A018B38213601BE004182E1 /* ViewController.swift in Sources */,
 				480AD475214715DE00CC2C90 /* RatingControl.swift in Sources */,
 				2A018B36213601BE004182E1 /* AppDelegate.swift in Sources */,
