@@ -9,9 +9,27 @@
 import UIKit
 
 class MealTableViewControlerTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    var meals = [Meal]()
+    
+    func loadSampleMeals() {
+        let photo1 = UIImage(named: "alitasDePollo")!
+        let meal1 = Meal(name: "Alitas de pollo bufalo", photo: photo1, rating: 4)!
+        
+        let photo2 = UIImage(named: "polloDiabla")!
+        let meal2 = Meal(name: "Pollo a la Diabla", photo: photo2, rating: 5)!
+        
+        let photo3 = UIImage(named: "polloFrito")!
+        let meal3 = Meal(name: "polloFrito", photo: photo3, rating: 3)!
+        
+        meals+=[meal1, meal2, meal3]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Load the sample data
+        loadSampleMeals()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
